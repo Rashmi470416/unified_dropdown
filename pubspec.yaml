@@ -1,7 +1,8 @@
 name: unified_dropdown
-description: "A new Flutter project."
+description: "A flexible Flutter dropdown widget that supports both selection from a list and user-defined input with automatic code generation."
 version: 0.0.1
-homepage:
+homepage: https://github.com/Rashmi470416/unified_dropdown
+repository: https://github.com/Rashmi470416/unified_dropdown
 
 environment:
   sdk: ^3.9.2
