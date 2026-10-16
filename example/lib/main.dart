@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:unified_dropdown/model/select_option.dart';
 import 'package:unified_dropdown/unified_dropdown.dart';
 
 void main() {
@@ -11,8 +10,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: DropdownDemoPage(),
+    return MaterialApp(
+      title: 'Unified Dropdown',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        useMaterial3: true,
+      ),
+      home: const DropdownDemoPage(),
     );
   }
 }
@@ -27,10 +32,12 @@ class DropdownDemoPage extends StatefulWidget {
 class _DropdownDemoPageState extends State<DropdownDemoPage> {
   SelectOptions? _selectedOption;
 
-  final List<SelectOptions> _options = [
+  final List<SelectOptions> _options = const [
     SelectOptions(key: '1', value: 'Option-1', code: 'op-1'),
     SelectOptions(key: '2', value: 'Option-2', code: 'op-2'),
     SelectOptions(key: '3', value: 'Option-3', code: 'op-3'),
+    SelectOptions(key: '4', value: 'Flutter', code: 'flutter'),
+    SelectOptions(key: '5', value: 'Dart', code: 'dart'),
   ];
 
   @override
@@ -46,15 +53,23 @@ class _DropdownDemoPageState extends State<DropdownDemoPage> {
               isInputField: true,
               items: _options,
               initialValue: _selectedOption,
-              fieldHintText: 'Enter hint text',
+              fieldHintText: 'Type to search or add…',
               isValidationRequired: true,
-              requiredValidationText: 'Name required',
+              requiredValidationText: 'Please select or enter a value',
+              showClearButton: true,
+              enableSearch: true,
               onSelected: (option) {
                 setState(() => _selectedOption = option);
               },
+              onCleared: () {
+                setState(() => _selectedOption = null);
+              },
             ),
             const SizedBox(height: 12),
-            Text('Selected: ${_selectedOption?.value ?? 'None'}'),
+            Text(
+              'Selected: ${_selectedOption?.value ?? 'None'}'
+              '${_selectedOption?.code != null ? ' (${_selectedOption!.code})' : ''}',
+            ),
           ],
         ),
       ),

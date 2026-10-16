@@ -1,14 +1,12 @@
 name: unified_dropdown_example
-description: "Demonstrates how to use the unified_dropdown plugin."
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+description: "Demonstrates how to use the unified_dropdown package."
+publish_to: 'none'
 
 homepage: https://github.com/Rashmi470416/unified_dropdown
 repository: https://github.com/Rashmi470416/unified_dropdown
 
 environment:
-  sdk: ^3.9.2
+  sdk: '>=3.0.0 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions

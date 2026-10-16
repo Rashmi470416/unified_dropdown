@@ -1,0 +1,29 @@
+# Build artifacts
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+pubspec.lock
+
+# Legacy native plugin scaffolding (package is pure Flutter now)
+android/
+ios/
+
+# IDE / local
+.idea/
+*.iml
+.metadata
+
+# Example platform folders (keep example Dart sources)
+example/android/
+example/ios/
+example/linux/
+example/macos/
+example/web/
+example/windows/
+example/build/
+example/.dart_tool/
+example/.flutter-plugins
+example/.flutter-plugins-dependencies
+example/pubspec.lock
